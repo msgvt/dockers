@@ -21,7 +21,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.apache.rule=Host(`peppermint.docker.tvoelkner.de`)"
     ports:
-      - 3000:3000
+      - 3000:80
       - 5003:5003
     restart: always
     depends_on:
