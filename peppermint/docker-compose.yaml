@@ -20,8 +20,6 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.apache.rule=Host(`peppermint.docker.tvoelkner.de`)"
-    networks:
-      - traefik_web
     ports:
       - 3000:3000
       - 5003:5003
