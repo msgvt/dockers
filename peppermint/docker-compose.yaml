@@ -37,6 +37,10 @@ services:
       DB_HOST: "peppermint_postgres"
       SECRET: 'peppermint4life'
       API_URL: "localhost:5003"
- 
+
+networks:
+  traefik_web:
+    external: true
+
 volumes:
  pgdata:
