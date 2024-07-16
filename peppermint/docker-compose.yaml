@@ -40,7 +40,7 @@ services:
       DB_PASSWORD: "1234"
       DB_HOST: "peppermint_postgres"
       SECRET: 'peppermint4life'
-      API_URL: "localhost:5003"
+      API_URL: "peppermint:5003"
 
 networks:
   traefik_web:
