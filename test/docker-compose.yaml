@@ -10,6 +10,8 @@ services:
       - traefik_web
     volumes:
       - ./html:/var/www/html
+    ports:
+      - "5010:80"
 
 networks:
   traefik_web:

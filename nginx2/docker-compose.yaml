@@ -6,7 +6,8 @@ services:
       - "traefik.http.routers.nginx.rule=Host(`nginx.docker.tvoelkner.de`)"
     networks:
       - traefik_web
-
+    ports:
+      - "5100:80"
 networks:
   traefik_web:
     external: true
