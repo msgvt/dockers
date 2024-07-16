@@ -19,7 +19,7 @@ services:
     image: pepperlabs/peppermint:latest
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.apache.rule=Host(`php.docker.tvoelkner.de`)"
+      - "traefik.http.routers.apache.rule=Host(`peppermint.docker.tvoelkner.de`)"
     networks:
       - traefik_web
     ports:
@@ -42,6 +42,3 @@ services:
  
 volumes:
  pgdata:
-networks:
-  web:
-    name: traefik_web
