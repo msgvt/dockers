@@ -4,8 +4,6 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nginx1.rule=Host(`nginx1.docker.tvoelkner.de`)"
-      - "traefik.http.routers.nginx1.entrypoints=web,web-secure"
-      - "traefik.http.routers.nginx1.tls=true"
     networks:
       - traefik_web
 networks:
