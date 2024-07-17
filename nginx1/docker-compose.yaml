@@ -8,8 +8,6 @@ services:
       - "traefik.http.routers.nginx1.tls=true"
     networks:
       - traefik_web
-    ports:
-      - "5100:80"
 networks:
   traefik_web:
     external: true
