@@ -9,7 +9,7 @@ services:
     networks:
       - traefik_web
     ports:
-      - "5200:80"
+      - "5200:5200"
 networks:
   traefik_web:
     external: true
