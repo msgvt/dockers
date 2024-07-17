@@ -4,6 +4,8 @@ services:
   peppermint_postgres:
     container_name: peppermint_postgres
     image: postgres:latest
+    networks:
+      - traefik_web
     restart: always
     volumes:
       - pgdata_live:/var/lib/postgresql/data
@@ -15,6 +17,11 @@ services:
   peppermint:
     container_name: peppermint
     image: pepperlabs/peppermint:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.apache.rule=Host(`peppermint.docker.tvoelkner.de`)"
+    networks:
+      - traefik_web
     ports:
       - 1000:3000
       - 1001:5003
@@ -26,6 +33,10 @@ services:
       DB_PASSWORD: "12345"
       DB_HOST: "peppermint_postgres"
       SECRET: 'peppermint4life'
+
+networks:
+  traefik_web:
+    external: true
 
 volumes:
  pgdata_live:
