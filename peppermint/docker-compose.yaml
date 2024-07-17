@@ -19,12 +19,9 @@ services:
     image: pepperlabs/peppermint:latest
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.peppermintrule=Host(`peppermint.docker.tvoelkner.de`)"
+      - "traefik.http.routers.peppermint.rule=Host(`peppermint.docker.tvoelkner.de`)"
     networks:
       - traefik_web
-    ports:
-      - 3000:80
-      - 5003:5003
     restart: always
     depends_on:
       - peppermint_postgres
