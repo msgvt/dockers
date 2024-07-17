@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: nginx:1.20
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nginx1.rule=Host(`nginx1.docker.tvoelkner.de`)"
+      - "traefik.http.routers.nginx1.entrypoints=web,web-secure"
+      - "traefik.http.routers.nginx1.tls=true"
+    networks:
+      - traefik_web
+    ports:
+      - "5100:80"
+networks:
+  traefik_web:
+    external: true
