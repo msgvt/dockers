@@ -1,5 +1,5 @@
 services:
-  nginx:
+  nginx2:
     image: nginx:1.20
     labels:
       - "traefik.enable=true"
@@ -9,7 +9,7 @@ services:
     networks:
       - traefik_web
     ports:
-      - "5200:5200"
+      - "5200:80"
 networks:
   traefik_web:
     external: true
