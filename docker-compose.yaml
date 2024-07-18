@@ -22,8 +22,6 @@ services:
       - "80:80"
       - "443:443"
       - "8080:8080"
-      - "3000:3000"
-      - :5003:5003"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./letsencrypt:/letsencrypt
